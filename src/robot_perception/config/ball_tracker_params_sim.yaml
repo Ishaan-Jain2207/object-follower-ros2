@@ -1,0 +1,77 @@
+detect_ball:
+  ros__parameters:
+    x_min: 0
+    x_max: 100
+
+    y_min: 32
+    y_max: 100
+
+# -------- color tunings yellow ---------------
+
+    h_min: 20
+    h_max: 37
+    s_min: 42
+    # s_max: 255
+    v_min: 0
+    # v_max: 255
+
+# ----------- red -----------------------
+
+    # h_min: 0
+    # h_max: 10
+    # s_min: 120
+    # s_max: 255
+    # v_min: 70
+    # v_max: 255
+
+# ------------  blue -----------------------
+
+    # h_min: 115
+    # h_max: 125
+    # s_min: 200
+    # s_max: 255
+    # v_min: 200
+    # v_max: 255
+
+# --------------- green ---------------------------
+
+    # h_min: 40
+    # h_max: 85
+    # s_min: 70
+    # s_max: 255
+    # v_min: 70
+    # v_max: 255
+
+# --------- from above keep any h s v 's ------
+    # sz_min: 0
+    # sz_max: 20
+
+    sz_min: 1
+    sz_max: 80
+
+detect_ball_3d:
+  ros__parameters:
+    h_fov: 1.089
+    ball_radius: 0.033
+    camera_frame: "camera_link_optical"
+
+
+follow_ball:
+  ros__parameters:
+    rcv_timeout_secs: 3.0
+    max_size_thresh: 0.30
+
+    # Faster turning toward ball
+    angular_chase_multiplier: 0.6
+
+    # Faster forward motion
+    forward_chase_speed: 0.1
+
+    # Faster searching rotation
+    search_angular_speed: 0.3
+
+    # Stop approaching when object appears large enough
+    max_size_thresh: 0.30
+
+    # Smoothing filter
+    filter_value: 0.9
